@@ -1,25 +1,27 @@
- class Alkohol {
-    val alkoholischeGetränke = mutableMapOf(
-        "Bier" to 2.50,
-        "Wein" to 7.99,
-        "Gin Tonic" to 8.50,
-        "Whiskey Sour" to 9.99,
-        "Margarita" to 10.50,
-        "Moscow Mule" to 11.99,
-        "Old Fashioned" to 12.50,
-        "Sangria" to 14.99,
-        "Negroni" to 15.50,
-        "Mimosa" to 16.99,
-        "Bloody Mary" to 18.50,
-        "Mojito" to 19.99,
-        "Long Island Iced Tea" to 20.50,
-        "Pina Colada" to 21.99,
-        "Cosmopolitan" to 22.50,
-        "Martini" to 23.99,
-        "Champagner" to 29.99,
-        "Tequila Sunrise" to 32.50,
-        "Whiskey on the rocks" to 35.99,
-        "Cognac" to 39.99
-    )
+ class Alkohol(name: String , preis : Double , val Alkoholprozentsatz: String  ) : Items(name , preis) {
+
+     /*
+      val gin = Alkohol("Gin", 15.0, "40%")
+    val vodka = Alkohol("Vodka", 12.5, "37.5%")
+    val whiskey = Alkohol("Whiskey", 20.0, "45%")
+    val rum = Alkohol("Rum", 14.5, "40%")
+    val tequila = Alkohol("Tequila", 16.0, "38%")
+    val brandy = Alkohol("Brandy", 18.0, "40%")
+    val vermouth = Alkohol("Vermouth", 12.0, "16%")
+    val chartreuse = Alkohol("Chartreuse", 25.0, "55%")
+    val sake = Alkohol("Sake", 10.0, "15%")
+    val absinthe = Alkohol("Absinthe", 30.0, "70%")
+    val grappa = Alkohol("Grappa", 12.0, "40%")
+    val schnaps = Alkohol("Schnaps", 8.0, "30%")
+    val ginTonic = Alkohol("Gin Tonic", 12.5, "8%")
+    val bloodyMary = Alkohol("Bloody Mary", 14.0, "10%")
+    val margarita = Alkohol("Margarita", 13.5, "12%")
+    val mojito = Alkohol("Mojito", 11.0, "8%")
+    val pinaColada = Alkohol("Pina Colada", 12.5, "10%")
+    val negroni = Alkohol("Negroni", 14.5, "22%")
+    val martini = Alkohol("Martini", 15.0, "20%")
+    val maiTai = Alkohol("Mai Tai", 13.0, "12%")
+      */
+
 
 }

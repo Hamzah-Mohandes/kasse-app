@@ -1,3 +1,2 @@
-class Menu (val items : MutableList<Items>) {
-
+class Menu(val items: MutableList<Items>) {
 }

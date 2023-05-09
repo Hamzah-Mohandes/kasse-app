@@ -1,25 +1,24 @@
- class KalteG(name : String , preis: Double) : Items(name, preis)  {
-    val kalteGetränke = mutableMapOf(
-        "Wasser (still)" to 1.50,
-        "Wasser (spritzig)" to 1.50,
-        "Saft" to 3.00,
-        "Eistee" to 3.50,
-        "Limonade" to 2.50,
-        "Cola" to 2.50,
-        "Sprite" to 2.50,
-        "Ginger Ale" to 2.99,
-        "Bitter Lemon" to 2.99,
-        "Energiedrink" to 4.50,
-        "Smoothie" to 4.99,
-        "Milchshake" to 3.99,
-        "Eiskaffee" to 3.50,
-        "Eislatte" to 4.50,
-        "Frappuccino" to 5.50,
-        "Mojito (alkoholfrei)" to 6.50,
-        "Caipirinha (alkoholfrei)" to 6.50,
-        "Piña Colada (alkoholfrei)" to 6.99,
-        "Margarita (alkoholfrei)" to 7.50,
-        "Long Island Iced Tea (alkoholfrei)" to 7.99
-    )
-
+class KalteG (name: String ,  preis : Double) : Items ( name, preis) {
+/*
+  val eistee = KalteG("Eistee", "2.0")
+    val limonade = KalteG("Limonade", "1.5")
+    val cola = KalteG("Cola", "2.5")
+    val orangensaft = KalteG("Orangensaft", "3.0")
+    val apfelsaft = KalteG("Apfelsaft", "2.5")
+    val wasser = KalteG("Wasser", "1.0")
+    val fruchtsaft = KalteG("Fruchtsaft", "2.5")
+    val smoothie = KalteG("Smoothie", "4.0")
+    val eiskaffee = KalteG("Eiskaffee", "3.5")
+    val milchshake = KalteG("Milchshake", "3.0")
+    val sprite = KalteG("Sprite", "2.5")
+    val fanta = KalteG("Fanta", "2.5")
+    val iceTeaPfirsich = KalteG("Ice Tea Pfirsich", "2.5")
+    val zitronenlimonade = KalteG("Zitronenlimonade", "2.0")
+    val eisfrappé = KalteG("Eisfrappé", "4.5")
+    val ananassaft = KalteG("Ananassaft", "3.0")
+    val traubensaft = KalteG("Traubensaft", "2.5")
+    val himbeersaft = KalteG("Himbeersaft", "3.0")
+    val mangosaft = KalteG("Mangosaft", "3.5")
+    val grünerSmoothie = KalteG("Grüner Smoothie", "4.5")
+ */
 }
