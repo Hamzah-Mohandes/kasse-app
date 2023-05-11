@@ -1,6 +1,5 @@
 # Café Menü
 
-![Kotlin Symbol](kotlin_symbol.png)
 
 Dieses Café Menü wurde mit Kotlin erstellt und ermöglicht es den Benutzern, Bestellungen für warme Getränke, alkoholische Getränke, Kuchen und kalte Getränke aufzugeben.
 
@@ -36,9 +35,6 @@ Das Menü enthält folgende Kategorien:
 6. Entscheiden Sie, ob Sie weitere Artikel bestellen möchten.
 7. Geben Sie Ihre Bestellung ab und lassen Sie sich den Gesamtpreis anzeigen.
 
-## Symbole und Emojis
 
-- Das Symbol für Kotlin wurde verwendet, um die Verwendung der Kotlin-Programmiersprache zu repräsentieren.
-- Emojis wurden nicht direkt im Code verwendet, können jedoch in der Benutzeroberfläche angezeigt werden, um die Benutzerfreundlichkeit zu verbessern.
-
+Hamzah Mohandeszadeh 
 Viel Spaß beim Ausprobieren des Café Menüs! ☕️🍰🍹
