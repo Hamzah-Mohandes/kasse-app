@@ -181,146 +181,206 @@ fun main() {
 // Menu Klassse  und TISCHNUMMER -----------------------------------------
 
 
-
-
-
     val bestellung = mutableListOf<Pair<String, Double>>()
 
 
     val stop = false
 
 
-        val tischnummerMitbestellungen = mutableMapOf<Int, MutableList<String>>()
+    val tischnummerMitbestellungen = mutableMapOf<Int, MutableList<Pair<String, Double>>>()
 
 
-        while (true) {
-            println("Was möchtest du tun?")
-            println("1. Tischnummer hinzufügen")
-            println("2. Tischnummer entfernen")
-            println("3. Alle Tischnummern anzeigen")
-            println("4. Tisch mehr bestellen ")
+    while (true) {
+        println("Was möchtest du tun? schreib ein Nummer und Enter : ")
+        println("1. Tischnummer hinzufügen")
+        println("2. Tischnummer entfernen")
+        println("3. Alle Tischnummern anzeigen")
+        println("4. Tisch mehr bestellen ")
 
+        val input = readLine()
 
-            val input = readLine()
+        when (input) {
+            "1" -> {
+                println("Gib eine Tischnummer ein:")
+                val neueTischnummer = readLine()?.toInt()
 
-            when (input) {
-                "1" -> {
-                    println("Gib eine Tischnummer ein:")
-                    val neueTischnummer = readLine()?.toInt()
+                if (neueTischnummer != null) {
 
-                    if (neueTischnummer != null) {
-
-                      if (! tischnummerMitbestellungen.keys.contains(neueTischnummer)) {
-                          println("wir haben die Tischnummer in liste !")
-                      }
-                        tischnummerMitbestellungen[neueTischnummer] = mutableListOf()   // warum habe Logic problem habe :/
-
-                        println("Tischnummer $neueTischnummer hinzugefügt.")
-                    } else {
-                        println("Ungültige Eingabe.")
+                    if (!tischnummerMitbestellungen.keys.contains(neueTischnummer)) {
+                        println("wir haben die Tischnummer in liste !")
                     }
-                }
+                    tischnummerMitbestellungen[neueTischnummer] = mutableListOf()
 
-                "2" -> {
-                    println("Welche Tischnummer möchtest du entfernen?")
-                    val tischnummerToRemove = readLine()?.toInt()
-
-                    if (tischnummerToRemove != null && tischnummerMitbestellungen.keys.contains(tischnummerToRemove)) {
-
-                        tischnummerMitbestellungen.remove(tischnummerToRemove)
-
-                        println("Tischnummer $tischnummerToRemove entfernt.")
-                    } else {
-                        println("Ungültige Eingabe oder Tischnummer nicht gefunden.")
-                    }
-                }
-
-                "3" -> {
-                    if (tischnummerMitbestellungen.keys.isEmpty()) {
-                        println("Keine Tischnummern vorhanden.")
-                    } else {
-                        println("Aktuelle Tischnummern:")
-                        tischnummerMitbestellungen.keys.forEach { println("- $it") }
-                    }
-                }
-                "4" -> {
-                    val edith = readln().toInt()
-                    val bestellungen = tischnummerMitbestellungen.get(edith)
-                    for (e in bestellung) {
-                        println("${e.first} ${e.second}")
-                    }
-                }
-
-                else -> {
-                    println("Ungültige Option.")
-                }
-            }
-
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            println("Bitte geben Sie Ihre Bestellung auf.")
-            while (true) {
-                println("Wählen Sie eine Kategorie aus (1-4):\n1. Warme Getränke\n2. Alkohol\n3. Kuchen\n4. Kalt")
-                val kategorieNummer = readLine() ?: ""
-                val kategorie = when (kategorieNummer) {
-                    "1" -> warmeGteränke
-                    "2" -> alkohol
-                    "3" -> kuchen
-                    else -> mutableListOf()
-                }
-
-
-                kategorie.forEachIndexed { index, item ->
-                    println("${index + 1}. ${item.name} (${item.preis} Euro)")
-                }
-
-                println("Bitte wählen Sie einen Menüpunkt aus (1-${kategorie.size})")
-                val menuNummer = readLine()?.toIntOrNull() ?: 0
-                if (menuNummer in 1..kategorie.size) {
-                    val ausgewähltesItem = kategorie[menuNummer - 1]
-                    bestellung.add(ausgewähltesItem.name to ausgewähltesItem.preis)
-                    println("Sie haben ${ausgewähltesItem.name} (${ausgewähltesItem.preis} Euro) gewählt.")
+                    println("Tischnummer $neueTischnummer hinzugefügt.")
                 } else {
                     println("Ungültige Eingabe.")
                 }
-
-                println("Möchten Sie noch etwas bestellen? (Y/N)")
-                val antwort = readLine() ?: ""
-                if (antwort.equals("N", ignoreCase = true))
-
-                {
-                    break
-                }
-
-                for (e in tischnummerMitbestellungen) {
-                    for (b in e.value)
-                        println("${e.key} ($b)")
-                }
-            }
-            //----------------------------------------------------------------
-
-            fun bestellungAufgeben(bestellung: List<Pair<String, Double>>) {
-                val artikel = mutableListOf<String>()
-                var preis = 0.0
-
-                for ((artikelName, preisValue) in bestellung) {
-                    artikel.add(artikelName)
-                    preis += preisValue
-                }
-
-                println("Vielen Dank für Ihre Bestellung:")
-                for (item in artikel) {
-                    println("- $item")
-                }
-                println("Gesamtpreis: $preis Euro")
             }
 
+            "2" -> {
+                println("Welche Tischnummer möchtest du entfernen?")
+                val tischnummerToRemove = readLine()?.toInt()
 
+                if (tischnummerToRemove != null && tischnummerMitbestellungen.keys.contains(tischnummerToRemove)) {
 
-            bestellungAufgeben(bestellung)
+                    tischnummerMitbestellungen.remove(tischnummerToRemove)
+
+                    println("Tischnummer $tischnummerToRemove entfernt.")
+                } else {
+                    println("Ungültige Eingabe oder Tischnummer nicht gefunden.")
+                }
+            }
+
+            "3" -> {
+                if (tischnummerMitbestellungen.keys.isEmpty()) {
+                    println("Keine Tischnummern vorhanden.")
+                } else {
+                    println("Aktuelle Tischnummern:")
+                    tischnummerMitbestellungen.keys.forEach { println("- $it") }
+                }
+            }
+
+            "4" -> {
+                val edith = readln().toInt()
+                val bestellungen = tischnummerMitbestellungen.get(edith)
+                for (e in bestellung) {
+                    println("${e.first} ${e.second}")
+                }
+            }
+
+            else -> {
+                println("Ungültige Option.")
+            }
         }
+
+
+
+
+
+        /* val input = readLine()
+
+         when (input) {
+             "1" -> {
+                 println("Gib eine Tischnummer ein:")
+                 val neueTischnummer = readLine()?.toInt()
+
+                 if (neueTischnummer != null) {
+
+                     if (!tischnummerMitbestellungen.keys.contains(neueTischnummer)) {
+                         println("wir haben die Tischnummer in liste !")
+                     }
+                     tischnummerMitbestellungen[neueTischnummer] = mutableListOf()
+
+                     println("Tischnummer $neueTischnummer hinzugefügt.")
+                 } else {
+                     println("Ungültige Eingabe.")
+                 }
+             }
+
+             "2" -> {
+                 println("Welche Tischnummer möchtest du entfernen?")
+                 val tischnummerToRemove = readLine()?.toInt()
+
+                 if (tischnummerToRemove != null && tischnummerMitbestellungen.keys.contains(tischnummerToRemove)) {
+
+                     tischnummerMitbestellungen.remove(tischnummerToRemove)
+
+                     println("Tischnummer $tischnummerToRemove entfernt.")
+                 } else {
+                     println("Ungültige Eingabe oder Tischnummer nicht gefunden.")
+                 }
+             }
+
+             "3" -> {
+                 if (tischnummerMitbestellungen.keys.isEmpty()) {
+                     println("Keine Tischnummern vorhanden.")
+                 } else {
+                     println("Aktuelle Tischnummern:")
+                     tischnummerMitbestellungen.keys.forEach { println("- $it") }
+                 }
+             }
+
+             "4" -> {
+                 val edith = readln().toInt()
+                 val bestellungen = tischnummerMitbestellungen.get(edith)
+                 for (e in bestellung) {
+                     println("${e.first} ${e.second}")
+                 }
+             }
+
+             else -> {
+                 println("Ungültige Option.")
+             }
+         }*/
+        // TODO:  verbenden  welsche Tisch nummer willst bedinen ? ein Fun mit alle nicht viel schreiben :/
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    println("Bitte geben Sie Ihre Bestellung auf.")
+        while (true) {
+            println("Wählen Sie eine Kategorie aus (1-4):\n1. Warme Getränke\n2. Alkohol\n3. Kuchen\n4. Kalt\n")
+            val kategorieNummer = readLine() ?: ""
+            val kategorie = when (kategorieNummer) {
+                "1" -> warmeGteränke
+                "2" -> alkohol
+                "3" -> kuchen
+                "4" -> kalt
+
+
+                else -> mutableListOf()
+            }
+
+
+            kategorie.forEachIndexed { index, item ->
+                println("${index + 1}. ${item.name} (${item.preis} Euro)")
+            }
+
+            println("Bitte wählen Sie einen Menüpunkt aus (1-${kategorie.size})")
+            val menuNummer = readLine()?.toIntOrNull() ?: 0
+            if (menuNummer in 1..kategorie.size) {
+                val ausgewähltesItem = kategorie[menuNummer - 1]
+                bestellung.add(ausgewähltesItem.name to ausgewähltesItem.preis)
+                // TODO:   tischnummerMitbestellungen[kategorieNummer.toInt()]
+                println("Sie haben ${ausgewähltesItem.name} (${ausgewähltesItem.preis} Euro) gewählt.")
+            } else {
+                println("Ungültige Eingabe.")
+            }
+            for (e in tischnummerMitbestellungen) {
+                for (b in e.value)
+                    println("${e.key} ($b)")
+            }
+            println("Möchten Sie noch etwas bestellen? (Y/N)")
+            val antwort = readLine() ?: ""
+            if (antwort.equals("N", ignoreCase = true)) {
+                break
+            }
+
+
+        }
+
+
+
+        //----------------------------------------------------------------
+
+        fun bestellungAufgeben(bestellung: List<Pair<String, Double>>) {
+            val artikel = mutableListOf<String>()
+            var preis = 0.0
+
+            for ((artikelName, preisValue) in bestellung) {
+                artikel.add(artikelName)
+                preis += preisValue
+            }
+
+            println("Vielen Dank für Ihre Bestellung:")
+            for (item in artikel) {
+                println("- $item")
+            }
+            println("Gesamtpreis: $preis Euro")
+        }
+
+        bestellungAufgeben(bestellung)
 
 
     }
 
+}
 
 
