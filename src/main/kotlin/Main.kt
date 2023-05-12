@@ -191,7 +191,17 @@ fun main() {
 
 
     while (true) {
-        println("Was möchtest du tun? schreib ein Nummer und Enter : ")
+        val redColor = "\u001B[31m"
+        val boldText = "\u001B[1m"
+        val reset = "\u001B[0m"
+        val heart = """
+       ❤️
+    """.trimIndent()
+
+
+
+        println(redColor + boldText + "Willkommen, Cendrella!" +reset + heart)
+        println("Was möchtest du tun , schreib ein Nummer und Enter : ")
         println("1. Tischnummer hinzufügen")
         println("2. Tischnummer entfernen")
         println("3. Alle Tischnummern anzeigen")
